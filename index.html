@@ -3,54 +3,43 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portal - Delivery Monitoring System</title>
+  <title>Monitoring Delivery System</title>
   <link rel="icon" href="https://raw.githubusercontent.com/ikhsan-ardian/Delivery-Monitoring-System-BBP/main/Logo%20PT%20BBP.png" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
-    body {
-      margin: 0; padding: 0;
-      height: 100vh;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      background-color: #f8fafc;
-      font-family: 'Inter', sans-serif;
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #eee;
+      overflow: hidden; /* Mencegah scroll ganda */
     }
-    .portal-card {
-      background: white;
-      padding: 40px;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-      text-align: center;
-      max-width: 400px;
-      border: 1px solid #e2e8f0;
+
+    .iframe-container {
+      width: 100%;
+      height: 100dvh; /* Menggunakan dvh agar pas di mobile browser */
+      overflow: hidden;
     }
-    .logo { width: 100px; margin-bottom: 20px; }
-    h2 { color: #1e293b; margin: 0 0 10px 0; }
-    p { color: #64748b; font-size: 0.95rem; margin-bottom: 30px; line-height: 1.5; }
-    .btn-masuk {
-      display: inline-block;
-      background: #128665;
-      color: white;
-      text-decoration: none;
-      padding: 12px 30px;
-      border-radius: 50px;
-      font-weight: 600;
-      font-size: 1rem;
-      transition: 0.3s;
-      box-shadow: 0 4px 15px rgba(18, 134, 101, 0.3);
+
+    iframe {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: none;
     }
-    .btn-masuk:hover { background: #0f6e52; transform: translateY(-2px); }
   </style>
 </head>
 <body>
-  <div class="portal-card">
-    <img src="https://raw.githubusercontent.com/ikhsan-ardian/Delivery-Monitoring-System-BBP/main/Logo%20PT%20BBP.png" alt="Logo BBP" class="logo">
-    <h2>Delivery Monitoring</h2>
-    <p>Silakan masuk menggunakan Akun Google Departemen Anda untuk mengakses sistem secara aman.</p>
-    
-    <a href="https://accounts.google.com/AccountChooser?continue=https://script.google.com/macros/s/AKfycby-Q8Siabq1raAISyWPjzoQ-o1kN_nAkcVSyL7Lpc2WIF67AVylsyIZfhdIHuf2Lc-_ug/exec" class="btn-masuk">
-      Masuk & Pilih Akun
-    </a>
+  <div class="iframe-container">
+    <iframe
+      id="app"
+      src="https://script.google.com/macros/s/AKfycby-Q8Siabq1raAISyWPjzoQ-o1kN_nAkcVSyL7Lpc2WIF67AVylsyIZfhdIHuf2Lc-_ug/exec"
+      scrolling="yes"
+      allowfullscreen="true"
+      webkitallowfullscreen="true"
+      mozallowfullscreen="true"
+      allow="fullscreen; camera; microphone; display-capture; geolocation;">
+    </iframe>
   </div>
 </body>
 </html>
